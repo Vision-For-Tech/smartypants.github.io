@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Progress Graph</title>
+</head>
+<body>
+    <h2>Quiz Progress Graph</h2>
+    <canvas id="progressChart" width="400" height="200"></canvas>
+
+    <script>
+        // Dummy data for demonstration
+        const quizScores = [80, 90, 75]; // User's quiz scores
+
+        // Check if the user has taken at least 3 quizzes
+        if (quizScores.length >= 3) {
+            const canvas = document.getElementById('progressChart');
+            const ctx = canvas.getContext('2d');
+
+            // Clear canvas
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Calculate average score
+            const averageScore = quizScores.reduce((total, score) => total + score, 0) / quizScores.length;
+
+            // Draw the progress bar
+            ctx.fillStyle = 'lightblue';
+            ctx.fillRect(50, 50, averageScore * 2, 50); // Multiply by 2 for visualization purpose
+
+            // Draw labels
+            ctx.fillStyle = 'black';
+            ctx.font = '16px Arial';
+            ctx.fillText('Progress', 10, 40);
+            ctx.fillText('Quiz 1', 50, 120);
+            ctx.fillText('Quiz 2', 150, 120);
+            ctx.fillText('Quiz 3', 250, 120);
+            ctx.fillText('Average Score: ' + averageScore.toFixed(2) + '%', 10, 180);
+        } else {
+            // If the user hasn't taken at least 3 quizzes, display a message
+            document.body.innerHTML += "<p>You need to take at least 3 quizzes to track progress.</p>";
+        }
+    </script>
+</body>
+</html>

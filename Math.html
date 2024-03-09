@@ -1,0 +1,959 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mathematics Quiz</title>
+    <!--====== Favicon Icon ======-->
+    <link rel="shortcut icon" href="images/smartypants.png" type="image/png">
+
+    <!--====== Slick css ======-->
+    <link rel="stylesheet" href="css/slick.css">
+
+    <!--====== Animate css ======-->
+    <link rel="stylesheet" href="css/animate.css">
+    
+    <!--====== Nice Select css ======-->
+    <link rel="stylesheet" href="css/nice-select.css">
+    
+    <!--====== Nice Number css ======-->
+    <link rel="stylesheet" href="css/jquery.nice-number.min.css">
+
+    <!--====== Magnific Popup css ======-->
+    <link rel="stylesheet" href="css/magnific-popup.css">
+
+    <!--====== Bootstrap css ======-->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    
+    <!--====== Fontawesome css ======-->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    
+    <!--====== Default css ======-->
+    <link rel="stylesheet" href="css/default.css">
+    
+    <!--====== Style css ======-->
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!--====== Responsive css ======-->
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<style>
+/* Reset default styles */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #0074d9;
+    color: #fff;
+}
+
+.syllabus h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.countdown {
+    font-size: 18px;
+}
+
+
+.dropdown-content {
+  display: none;
+  overflow-y: visible;
+  position: absolute;
+  width: fit-content;
+  margin-top: 45px;
+  background-color: #f1f1f1;
+  min-width: 100px;
+  text-align: left;
+  height: fit-content;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: list-item;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+/* Other styles for quiz questions, buttons, etc. */
+/* Customize as needed */
+/* ... */
+
+</style>
+<body>
+  
+    <!--====== PRELOADER PART START ======-->
+    
+    <div id="preloader">
+      <div class="dot"></div>
+      <div class="dot1"></div>
+      <div class="dot2"></div>
+      <p class="preloader-text">Loading...</p>
+  </div>
+
+  
+  <!--====== PRELOADER PART START ======-->
+  
+  <!--====== HEADER PART START ======-->
+  
+  <header id="header-part">
+     
+      <div class="header-top d-none d-lg-block">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-6">
+                      <div class="header-contact text-lg-left text-center">
+                          <ul>
+                              <!--<li><img src="images/all-icon/map.png" alt="icon"><span>127/5 Mark street, New york</span></li>-->
+                              <li><img src="images/all-icon/email.png" alt="icon"><span>visionfortech@gmail.com</span></li>
+                          </ul>
+                      </div>
+                  </div>
+                  <div class="col-lg-6">
+                      <div class="header-opening-time text-lg-right text-center">
+                          <!--<p>Opening Hours : Monday to Saturay - 8 Am to 5 Pm</p>-->
+                      </div>
+                  </div>
+              </div> <!-- row -->
+          </div> <!-- container -->
+      </div> <!-- header top -->
+      
+      <div class="header-logo-support pt-30 pb-30">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-4 col-md-4">
+                      <div class="logo">
+                          <a href="index-2.html">
+                              <img style="width: 80px; height: 80px;" src="images/smartypants.png" alt="Logo">
+                          </a>
+                      </div>
+                  </div>
+                  <div class="col-lg-8 col-md-8">
+                      <div class="support-button float-right d-none d-md-block">
+                          <div class="support float-left">
+                              <div class="icon">
+                                  <img src="images/phone.png" alt="icon">
+                              </div>
+                              <div class="cont">
+                                  <p>Need Help? call us free</p>
+                                  <span>+260 774029981</span>
+                              </div>
+                          </div>
+                          <div class="button float-left">
+                              <a href="register.html" class="main-btn">Register</a>
+                          </div>
+                      </div>
+                  </div>
+              </div> <!-- row -->
+          </div> <!-- container -->
+      </div> <!-- header logo support -->
+      
+      <div class="navigation">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-10 col-md-10 col-sm-9 col-8">
+                      <nav class="navbar navbar-expand-lg">
+                          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>
+                          </button>
+
+                          <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent">
+                              <ul class="navbar-nav mr-auto">
+                                  <li class="nav-item">
+                                      <a class="active" href="index-2.html">Home</a>
+                                      <ul class="sub-menu">
+                                          <li><a class="active" href="index-2.html">Home 01</a></li>
+                                          <li><a href="index-3.html">Home 02</a></li>
+                                          <li><a href="index-4.html">Home 03</a></li>
+                                      </ul>
+                                  </li>
+                                  <li class="nav-item">
+                                      <a href="about.html">About us</a>
+                                  </li>
+                                  <li class="nav-item">
+                                      <a href="courses.html">Courses</a>
+                                      <ul class="sub-menu">
+                                          <li><a href="courses.html">Courses</a></li>
+                                          <li><a href="courses-singel.html">Course Singel</a></li>
+                                      </ul>
+                                  </li>
+                                  <!--<li class="nav-item">
+                                      <a href="events.html">Events</a>
+                                      <ul class="sub-menu">
+                                          <li><a href="events.html">Events</a></li>
+                                          <li><a href="events-singel.html">Event Singel</a></li>
+                                      </ul>
+                                  </li>
+                                  <li class="nav-item">
+                                      <a href="teachers.html">Our teachers</a>
+                                      <ul class="sub-menu">
+                                          <li><a href="teachers.html">teachers</a></li>
+                                          <li><a href="teachers-singel.html">teacher Singel</a></li>
+                                      </ul>
+                                  </li>
+                                  <li class="nav-item">
+                                      <a href="blog.html">Blog</a>
+                                      <ul class="sub-menu">
+                                          <li><a href="blog.html">Blog</a></li>
+                                          <li><a href="blog-singel.html">Blog Singel</a></li>
+                                      </ul>
+                                  </li>
+                                  <li class="nav-item">
+                                      <a href="shop.html">Shop</a>
+                                      <ul class="sub-menu">
+                                          <li><a href="shop.html">Shop</a></li>
+                                          <li><a href="shop-singel.html">Shop Singel</a></li>
+                                      </ul>
+                                  </li>-->
+                                  <li class="nav-item">
+                                      <a href="contact.html">Contact</a>
+                                      <ul class="sub-menu">
+                                          <li><a href="contact.html">Contact Us</a></li>
+                                          <li><a href="contact-2.html">Contact Info</a></li>
+                                      </ul>
+                                  </li>
+                              </ul>
+                          </div>
+                      </nav> <!-- nav -->
+                  </div>
+                  <div class="col-lg-2 col-md-2 col-sm-3 col-4">
+                      <div class="right-icon text-right">
+                          <ul style="display: flex;">
+                              <li><input type="text" placeholder="Search...." id="name" /></li>
+                              <li><a href="#" id="search"><i class="fa fa-search"></i></a></li>
+
+                              <!--<li><a href="#"><i class="fa fa-shopping-bag"></i><span>0</span></a></li>-->
+                          </ul>
+                      </div> <!-- right icon -->
+                  </div>
+              </div> <!-- row -->
+          </div> <!-- container -->
+      </div>
+      
+  </header>
+    <div class="header">
+        <div class="syllabus">
+            <h1>Cambridge IGCSE Mathematics (0580)</h1>
+            <p>Explore the fascinating world of mathematics!</p>
+        </div>
+        <div class="countdown">
+            <span id="timer">60</span> seconds left
+        </div>
+    </div>
+
+
+
+  <section style="float: left;" id="syllabus">
+    <div class="syllabus_container">
+      <div class="syllabus">
+        <div class="dropdown">
+        <a style="font-size: 2rem;" class="menu" href="#" >||| Menu</a>
+        <div class="dropdown-content">
+        <ul style="display: block;font-size: 1.2rem;">
+          <li>1. Number</li>
+          <li>2. Algebra</li>
+          <li>3.Trigonometry</li>
+          <li>4. Statistics</li>
+          <li>5. Probability</li>
+        </ul>
+        </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+
+
+ <section style="font-size: 2rem; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+ <form style="margin-left: 500px; margin-top: 50px;" id="quizForm">
+  
+        <div style="background-color: aqua; border-radius: 30px;" class="question">
+          <p style="font-size: 2rem; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">1. Which of the following is the primary pigment responsible for photosynthesis?</p>
+          <label>
+            <input type="radio" name="q1" value="Chlorophyll a"> Chlorophyll 
+          </label><br>
+          <label>
+            <input type="radio" name="q1" value=" Chlorophyll b">  Chlorophyll b
+          </label><br>
+          <label>
+            <input type="radio" name="q1" value="Carotene"> Carotene
+          </label><br>
+          <label>
+            <input type="radio" name="q1" value="Xanthophyll"> Xanthophyll
+          </label><br>
+        </div>
+        
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        
+        <br><div class="question">
+          <p style="font-size: 2rem; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">2. What is the function of the mitochondria in a cell?</p>
+          <label>
+            <input type="radio" name="q2" value="Photosynthesis"> Photosynthesis
+          </label><br>
+          <label>
+            <input type="radio" name="q2" value="Cellular respiration"> Cellular respiration
+          </label><br>
+          <label>
+            <input type="radio" name="q2" value="DNA replication"> DNA replication
+          </label><br>
+          <label>
+            <input type="radio" name="q2" value="Protein synthesis">  Protein synthesis
+          </label><br>
+        </div></br>
+
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        
+        <div class="question">
+          <p style="font-size: 2rem; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">3. Which organelle is responsible for protein synthesis in a cell?</p>
+          <label>
+            <input type="radio" name="q3" value="Ribosome"> Ribosome
+          </label><br>
+          <label>
+            <input type="radio" name="q3" value="Nucleus"> Nucleus
+          </label><br>
+          <label>
+            <input type="radio" name="q3" value="Golgi apparatus"> Golgi apparatus
+          </label><br>
+          <label>
+            <input type="radio" name="q3" value="Endoplasmic reticulum"> Endoplasmic reticulum
+          </label><br>
+        </div>
+
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        
+        <div class="question">
+          <p style="font-size: 2rem; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">4. What is the process by which water moves across a semipermeable membrane from an area of high concentration to an area of low concentration?</p>
+          <label>
+            <input type="radio" name="q4" value="Osmosis"> Osmosis
+          </label><br>
+          <label>
+            <input type="radio" name="q4" value="Diffusion"> Diffusion
+          </label><br>
+          <label>
+            <input type="radio" name="q4" value="Active transport"> Active transport
+          </label><br>
+          <label>
+            <input type="radio" name="q4" value="Facilitated diffusion"> Facilitated diffusion
+          </label><br>
+        </div>
+
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        
+        <div class="question">
+          <p style="font-size: 2rem; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">5. Which of the following is NOT a function of the circulatory system?</p>
+          <label>
+            <input type="radio" name="q5" value=" Transport of nutrients">  Transport of nutrients
+          </label><br>
+          <label>
+            <input type="radio" name="q5" value="Regulation of body temperature"> Regulation of body temperature
+          </label><br>
+          <label>
+            <input type="radio" name="q5" value="Removal of waste products"> Removal of waste products
+          </label><br>
+          <label>
+            <input type="radio" name="q5" value="Production of hormones"> Production of hormones
+          </label><br>
+        </div>
+
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        
+        <div class="question">
+          <p style="font-size: 2rem; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">6. What is the correct sequence of stages in the cell cycle?</p>
+          <label>
+            <input type="radio" name="q6" value="Interphase, prophase, metaphase, anaphase, telophase"> Interphase, prophase, metaphase, anaphase, telophase
+          </label><br>
+          <label>
+            <input type="radio" name="q6" value="Prophase, metaphase, anaphase, telophase, interphase"> Prophase, metaphase, anaphase, telophase, interphase
+          </label><br>
+          <label>
+            <input type="radio" name="q6" value="Interphase, metaphase, prophase, anaphase, telophase"> Interphase, metaphase, prophase, anaphase, telophase
+          </label><br>
+          <label>
+            <input type="radio" name="q6" value="Metaphase, anaphase, prophase, telophase, interphase"> Metaphase, anaphase, prophase, telophase, interphase
+          </label><br>
+        </div>
+
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        
+        <div class="question">
+          <p style="font-size: 2rem; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">7.  Which of the following is NOT a function of the nervous system?</p>
+          <label>
+            <input type="radio" name="q7" value="Coordination of body movements"> Coordination of body movements
+          </label><br>
+          <label>
+            <input type="radio" name="q7" value="Regulation of heartbeat"> Regulation of heartbeat
+          </label><br>
+          <label>
+            <input type="radio" name="q7" value="Production of hormones"> Production of hormones
+          </label><br>
+          <label>
+            <input type="radio" name="q7" value="Processing sensory information">Processing sensory information
+          </label><br>
+        </div>
+
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        
+        <div class="question">
+          <p style="font-size: 2rem; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">8. What is the function of the enzyme amylase?</p>
+          <label>
+            <input type="radio" name="q8" value="Breaks down proteins into amino acids"> Breaks down proteins into amino acids
+          </label><br>
+          <label>
+            <input type="radio" name="q8" value=" Breaks down carbohydrates into simple sugars"> Breaks down carbohydrates into simple sugars
+          </label><br>
+          <label>
+            <input type="radio" name="q8" value="Breaks down fats into fatty acids and glycerol"> Breaks down fats into fatty acids and glycerol
+          </label><br>
+          <label>
+            <input type="radio" name="q8" value="Breaks down nucleic acids into nucleotides"> Breaks down nucleic acids into nucleotides
+          </label><br>
+        </div>
+
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        
+        <div class="question">
+          <p style="font-size: 2rem; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">9. Which of the following is a renewable energy resource?</p>
+          <label>
+            <input type="radio" name="q9" value="Coal"> Coal
+          </label><br>
+          <label>
+            <input type="radio" name="q9" value="Natural gas"> Natural gas
+          </label><br>
+          <label>
+            <input type="radio" name="q9" value="Wind"> Wind
+          </label><br>
+          <label>
+            <input type="radio" name="q9" value="Nuclear energy"> Nuclear energy
+          </label><br>
+        </div>
+
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        
+        <div class="question">
+          <p style="font-size: 2rem; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">10. What is the role of stomata in plant leaves?</p>
+          <label>
+            <input type="radio" name="q10" value="Absorption of sunlight"> Absorption of sunlight
+          </label><br>
+          <label>
+            <input type="radio" name="q10" value="Exchange of gases"> Exchange of gases
+          </label><br>
+          <label>
+            <input type="radio" name="q10" value="Storage of water"> Storage of water
+          </label><br>
+          <label>
+            <input type="radio" name="q10" value="Transport of nutrients"> Transport of nutrients
+          </label><br>
+        </div>
+
+        <!--<p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        
+        <div class="question">
+          <p style="font-size: 2rem; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">3. Which organelle is responsible for protein synthesis in a cell?</p>
+          <label>
+            <input type="radio" name="q3" value="Ribosome"> Ribosome
+          </label><br>
+          <label>
+            <input type="radio" name="q3" value="Nucleus"> Nucleus
+          </label><br>
+          <label>
+            <input type="radio" name="q3" value="Golgi apparatus"> Golgi apparatus
+          </label><br>
+          <label>
+            <input type="radio" name="q3" value="Endoplasmic reticulum"> Endoplasmic reticulum
+          </label><br>
+        </div>
+
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        
+        <div class="question">
+          <p style="font-size: 2rem; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">3. Which organelle is responsible for protein synthesis in a cell?</p>
+          <label>
+            <input type="radio" name="q3" value="Ribosome"> Ribosome
+          </label><br>
+          <label>
+            <input type="radio" name="q3" value="Nucleus"> Nucleus
+          </label><br>
+          <label>
+            <input type="radio" name="q3" value="Golgi apparatus"> Golgi apparatus
+          </label><br>
+          <label>
+            <input type="radio" name="q3" value="Endoplasmic reticulum"> Endoplasmic reticulum
+          </label><br>
+        </div>
+
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        
+        <div class="question">
+          <p style="font-size: 2rem; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">3. Which organelle is responsible for protein synthesis in a cell?</p>
+          <label>
+            <input type="radio" name="q3" value="Ribosome"> Ribosome
+          </label><br>
+          <label>
+            <input type="radio" name="q3" value="Nucleus"> Nucleus
+          </label><br>
+          <label>
+            <input type="radio" name="q3" value="Golgi apparatus"> Golgi apparatus
+          </label><br>
+          <label>
+            <input type="radio" name="q3" value="Endoplasmic reticulum"> Endoplasmic reticulum
+          </label><br>
+        </div>
+
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        
+        <div class="question">
+          <p style="font-size: 2rem; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">3. Which organelle is responsible for protein synthesis in a cell?</p>
+          <label>
+            <input type="radio" name="q3" value="Ribosome"> Ribosome
+          </label><br>
+          <label>
+            <input type="radio" name="q3" value="Nucleus"> Nucleus
+          </label><br>
+          <label>
+            <input type="radio" name="q3" value="Golgi apparatus"> Golgi apparatus
+          </label><br>
+          <label>
+            <input type="radio" name="q3" value="Endoplasmic reticulum"> Endoplasmic reticulum
+          </label><br>
+        </div>
+
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        
+        <div class="question">
+          <p style="font-size: 2rem; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">3. Which organelle is responsible for protein synthesis in a cell?</p>
+          <label>
+            <input type="radio" name="q3" value="Ribosome"> Ribosome
+          </label><br>
+          <label>
+            <input type="radio" name="q3" value="Nucleus"> Nucleus
+          </label><br>
+          <label>
+            <input type="radio" name="q3" value="Golgi apparatus"> Golgi apparatus
+          </label><br>
+          <label>
+            <input type="radio" name="q3" value="Endoplasmic reticulum"> Endoplasmic reticulum
+          </label><br>
+        </div>
+
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        
+        <div class="question">
+          <p style="font-size: 2rem; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">3. Which organelle is responsible for protein synthesis in a cell?</p>
+          <label>
+            <input type="radio" name="q3" value="Ribosome"> Ribosome
+          </label><br>
+          <label>
+            <input type="radio" name="q3" value="Nucleus"> Nucleus
+          </label><br>
+          <label>
+            <input type="radio" name="q3" value="Golgi apparatus"> Golgi apparatus
+          </label><br>
+          <label>
+            <input type="radio" name="q3" value="Endoplasmic reticulum"> Endoplasmic reticulum
+          </label><br>
+        </div>
+
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        
+        <div class="question">
+          <p style="font-size: 2rem; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">3. Which organelle is responsible for protein synthesis in a cell?</p>
+          <label>
+            <input type="radio" name="q3" value="Ribosome"> Ribosome
+          </label><br>
+          <label>
+            <input type="radio" name="q3" value="Nucleus"> Nucleus
+          </label><br>
+          <label>
+            <input type="radio" name="q3" value="Golgi apparatus"> Golgi apparatus
+          </label><br>
+          <label>
+            <input type="radio" name="q3" value="Endoplasmic reticulum"> Endoplasmic reticulum
+          </label><br>
+        </div>
+
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        
+        <div class="question">
+          <p style="font-size: 2rem; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">3. Which organelle is responsible for protein synthesis in a cell?</p>
+          <label>
+            <input type="radio" name="q3" value="Ribosome"> Ribosome
+          </label><br>
+          <label>
+            <input type="radio" name="q3" value="Nucleus"> Nucleus
+          </label><br>
+          <label>
+            <input type="radio" name="q3" value="Golgi apparatus"> Golgi apparatus
+          </label><br>
+          <label>
+            <input type="radio" name="q3" value="Endoplasmic reticulum"> Endoplasmic reticulum
+          </label><br>
+        </div>-->
+        
+        <button type="button" id="submitButton" onclick="submitQuiz()">Submit</button>
+      </form>
+
+    
+      </div>
+      
+      <section style="display: flex;" id="Results">
+      <div id="results"></div>
+      <div id="correctAnswers"></div>
+      </section>
+    </section>
+      
+
+
+
+
+
+    <!--
+
+    <section style="margin-left: 500px; font-size: 1.9rem; font-family: cursive;" id="biology">
+
+    <div id="question_1_container">
+        <div id="question1">
+            <p style="font-size: 2rem;">1. What is Biology?</p>
+            <ul>
+                <li>A</li>
+                <li>B</li>
+                <li>C</li>
+                <li>D</li>
+            </ul>
+        </div>
+    </div>
+    <div id="question_1_container">
+        <div id="question1">
+            <p>2. What is Biology?</p>
+            <ul>
+                <li>A</li>
+                <li>B</li>
+                <li>C</li>
+                <li>D</li>
+            </ul>
+        </div>
+    </div>
+    <div id="question_1_container">
+        <div id="question1">
+            <p>What is Biology?</p>
+            <ul>
+                <li>A</li>
+                <li>B</li>
+                <li>C</li>
+                <li>D</li>
+            </ul>
+        </div>
+    </div>
+    <div id="question_1_container">
+        <div id="question1">
+            <p>What is Biology?</p>
+            <ul>
+                <li>A</li>
+                <li>B</li>
+                <li>C</li>
+                <li>D</li>
+            </ul>
+        </div>
+    </div>
+    <div id="question_1_container">
+        <div id="question1">
+            <p>What is Biology?</p>
+            <ul>
+                <li><input type="radio" id="answer" value="true">A</li>
+                <li><input type="radio" id="answer" value="true">B</li>
+                <li><input type="radio" id="answer" value="true">C</li>
+                <li><input type="radio" id="answer" value="true">D</li>
+            </ul>
+        </div>
+    </div>
+    <div id="question_1_container">
+        <div id="question1">
+            <p>What is Biology?</p>
+            <ul>
+                <li>A</li>
+                <li>B</li>
+                <li>C</li>
+                <li>D</li>
+            </ul>
+        </div>
+    </div>
+
+    -->
+ </section>
+
+
+    
+
+  <footer id="footer-part">
+        <div class="footer-top pt-40 pb-70">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="footer-about mt-40">
+                            <div class="logo">
+                                <a href="#"><img style="width: 100px; height: 100px;" src="images/smartypants.png" alt="Logo"></a>
+                            </div>
+                            <p>Gravida nibh vel velit auctor aliquetn quibibendum auci elit cons equat ipsutis sem nibh id elit. Duis sed odio sit amet nibh vulputate.</p>
+                            <ul class="mt-20">
+                                <li><a href="#"><i class="fa fa-facebook-f"></i></a></li>
+                                <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+                                <li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                                <li><a href="#"><i class="fa fa-instagram"></i></a></li>
+                            </ul>
+                        </div> <!-- footer about -->
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="footer-link mt-40">
+                            <div class="footer-title pb-25">
+                                <h6>Sitemap</h6>
+                            </div>
+                            <ul>
+                                <li><a href="index-2.html"><i class="fa fa-angle-right"></i>Home</a></li>
+                                <li><a href="about.html"><i class="fa fa-angle-right"></i>About us</a></li>
+                                <li><a href="courses.html"><i class="fa fa-angle-right"></i>Courses</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="contact.html"><i class="fa fa-angle-right"></i>Contact</a></li>
+                            </ul>
+                        </div> <!-- footer link -->
+                    </div>
+                    <div class="col-lg-2 col-md-6 col-sm-6">
+                        <div class="footer-link support mt-40">
+                            <div class="footer-title pb-25">
+                                <h6>Support</h6>
+                            </div>
+                            <ul>
+                                <li><a href="#"><i class="fa fa-angle-right"></i>FAQS</a></li>
+                                <li><a href="#"><i class="fa fa-angle-right"></i>Privacy</a></li>
+                                <li><a href="#"><i class="fa fa-angle-right"></i>Policy</a></li>
+                                <li><a href="#"><i class="fa fa-angle-right"></i>Support</a></li>
+                                <li><a href="#"><i class="fa fa-angle-right"></i>Documentation</a></li>
+                            </ul>
+                        </div> <!-- support -->
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <div class="footer-address mt-40">
+                            <div class="footer-title pb-25">
+                                <h6>Contact Us</h6>
+                            </div>
+                            <ul>
+                                <li>
+                                    <div class="icon">
+                                        <i><img src="images/phone.png"></i>
+                                    </div>
+                                    <div class="cont">
+                                        <p>+260 774029981</p>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="icon">
+                                        <i class="fa fa-envelope-o"></i>
+                                    </div>
+                                    <div class="cont">
+                                        <p>visionfortech@gmail.com</p>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div> <!-- footer address -->
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div> <!-- footer top -->
+        
+        <div class="footer-copyright pt-10 pb-25">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                    </div>
+                    <div class="col-md-4">
+                        <div class="copyright text-md-right text-center pt-15">
+                           
+                        </div>
+                    </div>
+                </div> <!-- row -->
+            </div> <!-- container -->
+        </div> <!-- footer copyright -->
+    </footer>
+    
+    <!--====== FOOTER PART ENDS ======-->
+   
+    <!--====== BACK TO TP PART START ======-->
+    
+    <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+
+
+
+    <script>
+            // Countdown timer
+      let timeLeft = 100;
+      const timerElement = document.getElementById('timer');
+      const submitButton = document.getElementById('submitButton');
+
+      window.onload = function() {
+        alert("You have 100s to solve this quiz or else")
+      }
+
+      function updateTimer() {
+          timerElement.textContent = timeLeft;
+          if (timeLeft === 0) {
+              submitQuiz();
+              if (submitQuiz() === false) {
+                submitButton.disabled = true;
+                alert("TIME UP!!!!");
+
+              }
+          } else {
+              timeLeft--;
+              setTimeout(updateTimer, 1000);
+          }
+      }
+
+      updateTimer();
+
+        // Add loaded class to body after 10 seconds
+      setTimeout(function() {
+      document.body.classList.add('loaded');
+      }, 5000,500); // 10 seconds delay
+
+      function submitQuiz() {
+  var answers = {};
+  var questions = document.querySelectorAll('.question');
+  
+  questions.forEach(function(question, index) {
+    var input = question.querySelector('input:checked');
+    if (input) {
+      answers[(index + 1)] = input.value;
+    } else {
+      answers['q' + (index + 1)] = 'No Answer';
+    }
+  });
+  
+  // Display results
+  var resultsDiv = document.getElementById('results');
+  resultsDiv.innerHTML = '<h2>Results:</h2>';
+  Object.keys(answers).forEach(function(question, index) {
+    resultsDiv.innerHTML += '<p>' + question + ': ' + answers[question] + '</p>';
+  });
+
+ var correctAnswers = ['Chlorophyll a', 'Cellular Respiration', 'Ribosome','Osmosis','Regulation of body temperature','Interphase, metaphase, prophase, anaphase, telophase','Regulation of heartbeat','Breaks down carbohydrates into simple sugars','Wind','Exchange of gases'];
+
+ var userAnswers = answers;
+
+ var correctDiv = document.getElementById('correctAnswers');
+  correctDiv.innerHTML = '<h2>Correct Answers:</h2>';
+  Object.keys(correctAnswers).forEach(function(question, index) {
+    correctDiv.innerHTML += '<p style="color: green;">' + question + ': ' + correctAnswers[question - 1] + '</p>';
+  });
+
+
+ 
+var score = 0;
+for (var i = 0; i < correctAnswers.length; i++) {
+    if (correctAnswers[i] === userAnswers[(i + 1)]) {
+        score++;
+    }
+ }
+
+ // Display results
+ resultsDiv.innerHTML += '<p>Total Score: ' + score + ' out of ' + correctAnswers.length + '</p>';
+
+}
+
+    </script> 
+</body>
+</html>
